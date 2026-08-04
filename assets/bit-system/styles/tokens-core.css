@@ -1,0 +1,290 @@
+/* ================================================================
+   BIT SYSTEM · Tokens Core
+   Canonical runtime tokens for browser consumption.
+   ================================================================ */
+
+@font-face {
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/vt323-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/inconsolata-latin.woff2') format('woff2');
+}
+
+:root {
+  --neon-50:  #E6FFFB;
+  --neon-100: #CBFFEF;
+  --neon-200: #A4FFE5;
+  --neon-300: #73FFDA;
+  --neon-400: #51FFD5;
+  --neon-500: #00FFD1;
+  --neon-600: #00E0B8;
+  --neon-700: #00B896;
+  --neon-800: #008A72;
+  --neon-900: #005C4D;
+
+  --fuchsia-50:  #FFE6FF;
+  --fuchsia-100: #FFC4FF;
+  --fuchsia-200: #FF9AFF;
+  --fuchsia-300: #FF68FF;
+  --fuchsia-400: #FF48FF;
+  --fuchsia-500: #FF00FF;
+  --fuchsia-600: #D900D9;
+  --fuchsia-700: #A300A3;
+  --fuchsia-800: #700070;
+  --fuchsia-900: #400040;
+
+  --tolopea-50:  #EAE6FF;
+  --tolopea-100: #C6BCFF;
+  --tolopea-200: #9B8AFF;
+  --tolopea-300: #7359FF;
+  --tolopea-400: #5742FF;
+  --tolopea-500: #411CFF;
+  --tolopea-600: #310AF7;
+  --tolopea-700: #2908CF;
+  --tolopea-800: #2409A9;
+  --tolopea-900: #190675;
+
+  --neutral-0:   #FFFFFF;
+  --neutral-50:  #FAFAFA;
+  --neutral-100: #E4E4E4;
+  --neutral-200: #C9C9C9;
+  --neutral-300: #AFAEAF;
+  --neutral-400: #969595;
+  --neutral-500: #7E7C7D;
+  --neutral-600: #666465;
+  --neutral-700: #4C4A4A;
+  --neutral-800: #393838;
+  --neutral-900: #221F20;
+  --neutral-950: #100F0F;
+
+  --green-400: #4CFF4C;
+  --green-600: #00C853;
+  --amber-400: #FFD54C;
+  --amber-600: #FFA726;
+  --red-400:   #FF7C71;
+  --red-600:   #E53935;
+
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-2xl:  16px;
+  --radius-full: 9999px;
+
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-3: 3px;
+  --border-4: 4px;
+
+  --size-icon-xs:  12px;
+  --size-icon-sm:  16px;
+  --size-icon-md:  20px;
+  --size-icon-lg:  24px;
+  --size-icon-xl:  32px;
+  --size-icon-2xl: 48px;
+  --size-hit:      44px;
+
+  --font-pixel: 'VT323', 'Consolas', ui-monospace, monospace;
+  --font-mono:  'Inconsolata', 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans:  'Inconsolata', 'JetBrains Mono', ui-monospace, monospace;
+
+  --fs-display: 96px;
+  --fs-h1:      64px;
+  --fs-h2:      48px;
+  --fs-h3:      32px;
+  --fs-h4:      24px;
+  --fs-h5:      20px;
+  --fs-body-lg: 18px;
+  --fs-body:    16px;
+  --fs-body-sm: 14px;
+  --fs-caption: 12px;
+
+  --lh-tight:  1;
+  --lh-snug:   1.2;
+  --lh-normal: 1.5;
+  --lh-relax:  1.65;
+
+  --ls-tight:    -0.02em;
+  --ls-normal:   0;
+  --ls-wide:     0.04em;
+  --ls-overline: 0.12em;
+
+  --motion-fast:   100ms;
+  --motion-base:   200ms;
+  --motion-slow:   400ms;
+  --ease-pixel:    steps(8, end);
+  --ease-blink:    steps(2);
+  --ease-smooth:   cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --container-sm: 640px;
+  --container-md: 960px;
+  --container-lg: 1200px;
+  --container-xl: 1440px;
+
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-modal:   1000;
+  --z-toast:   2000;
+
+  --brand-primary:       var(--neon-500);
+  --brand-primary-hover: var(--neon-400);
+  --brand-primary-ink:   var(--neutral-950);
+  --brand-accent:        var(--fuchsia-500);
+  --brand-accent-hover:  var(--fuchsia-400);
+  --brand-accent-ink:    var(--neutral-950);
+  --brand-deep:          var(--tolopea-800);
+  --brand-deep-ink:      var(--neutral-0);
+  --feedback-ink:        var(--neutral-950);
+}
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg:              var(--neutral-950);
+  --color-surface:         var(--neutral-900);
+  --color-surface-raised:  var(--neutral-800);
+  --color-surface-sunken:  var(--neutral-950);
+  --color-surface-invert:  var(--neutral-50);
+
+  --color-text:            var(--neutral-50);
+  --color-text-muted:      var(--neutral-300);
+  --color-text-subtle:     var(--neutral-500);
+  --color-text-invert:     var(--neutral-950);
+  --color-text-brand:      var(--brand-primary);
+  --color-text-link:       var(--brand-primary);
+  --color-text-link-hover: var(--brand-primary-hover);
+
+  --color-border:          var(--neutral-800);
+  --color-border-strong:   var(--neutral-700);
+  --color-border-brand:    var(--brand-primary);
+
+  --color-action-bg:                var(--brand-primary);
+  --color-action-bg-hover:          var(--brand-primary-hover);
+  --color-action-text:              var(--brand-primary-ink);
+  --color-action-accent-bg:         var(--brand-accent);
+  --color-action-accent-text:       var(--brand-accent-ink);
+  --color-action-ghost-bg:          transparent;
+  --color-action-ghost-border:      var(--neutral-700);
+  --color-action-danger-bg:         var(--red-400);
+  --color-action-danger-bg-hover:   var(--red-600);
+  --color-action-danger-text:       var(--feedback-ink);
+  --color-action-whatsapp-bg:       #25D366;
+  --color-action-whatsapp-bg-hover: #1FB455;
+  --color-action-whatsapp-text:     #FFFFFF;
+
+  --color-success:    var(--green-400);
+  --color-success-bg: color-mix(in srgb, var(--green-400) 15%, var(--neutral-950));
+  --color-warning:    var(--amber-400);
+  --color-warning-bg: color-mix(in srgb, var(--amber-400) 15%, var(--neutral-950));
+  --color-danger:     var(--red-400);
+  --color-danger-bg:  color-mix(in srgb, var(--red-400) 15%, var(--neutral-950));
+  --color-info:       var(--tolopea-300);
+  --color-info-bg:    color-mix(in srgb, var(--tolopea-300) 15%, var(--neutral-950));
+
+  --color-focus-outline: var(--neutral-0);
+  --color-focus-halo:    var(--neutral-950);
+
+  --shadow-sm:     2px 2px 0 var(--neutral-950);
+  --shadow-md:     4px 4px 0 var(--neutral-950);
+  --shadow-lg:     8px 8px 0 var(--neutral-950);
+  --shadow-brand:  4px 4px 0 var(--brand-primary);
+  --shadow-accent: 4px 4px 0 var(--brand-accent);
+  --shadow-inset:  inset 0 0 0 2px var(--brand-primary);
+
+  --gradient-primary: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+  --gradient-deep:    linear-gradient(135deg, var(--brand-deep), var(--brand-accent));
+  --gradient-surface: linear-gradient(180deg, var(--neutral-900), var(--neutral-950));
+
+  --focus-ring: 0 0 0 3px var(--brand-primary);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg:              var(--neutral-50);
+  --color-surface:         var(--neutral-0);
+  --color-surface-raised:  var(--neutral-0);
+  --color-surface-sunken:  var(--neutral-100);
+  --color-surface-invert:  var(--neutral-950);
+
+  --color-text:            var(--neutral-950);
+  --color-text-muted:      var(--neutral-700);
+  --color-text-subtle:     var(--neutral-500);
+  --color-text-invert:     var(--neutral-50);
+  --color-text-brand:      var(--tolopea-800);
+  --color-text-link:       var(--tolopea-800);
+  --color-text-link-hover: var(--tolopea-600);
+
+  --color-border:          var(--neutral-200);
+  --color-border-strong:   var(--neutral-300);
+  --color-border-brand:    var(--tolopea-800);
+
+  --color-action-bg:                var(--neutral-950);
+  --color-action-bg-hover:          var(--tolopea-800);
+  --color-action-text:              var(--brand-primary);
+  --color-action-accent-bg:         var(--brand-accent);
+  --color-action-accent-text:       var(--brand-accent-ink);
+  --color-action-ghost-bg:          transparent;
+  --color-action-ghost-border:      var(--neutral-500);
+  --color-action-danger-bg:         var(--red-600);
+  --color-action-danger-bg-hover:   var(--red-600);
+  --color-action-danger-text:       var(--feedback-ink);
+  --color-action-whatsapp-bg:       #25D366;
+  --color-action-whatsapp-bg-hover: #1FB455;
+  --color-action-whatsapp-text:     #FFFFFF;
+
+  --color-success:    var(--green-600);
+  --color-success-bg: color-mix(in srgb, var(--green-600) 10%, var(--neutral-0));
+  --color-warning:    var(--amber-600);
+  --color-warning-bg: color-mix(in srgb, var(--amber-600) 10%, var(--neutral-0));
+  --color-danger:     var(--red-600);
+  --color-danger-bg:  color-mix(in srgb, var(--red-600) 10%, var(--neutral-0));
+  --color-info:       var(--tolopea-600);
+  --color-info-bg:    color-mix(in srgb, var(--tolopea-600) 10%, var(--neutral-0));
+
+  --color-focus-outline: var(--neutral-950);
+  --color-focus-halo:    var(--neutral-0);
+
+  --shadow-sm:     2px 2px 0 var(--neutral-950);
+  --shadow-md:     4px 4px 0 var(--neutral-950);
+  --shadow-lg:     8px 8px 0 var(--neutral-950);
+  --shadow-brand:  4px 4px 0 var(--tolopea-800);
+  --shadow-accent: 4px 4px 0 var(--brand-accent);
+  --shadow-inset:  inset 0 0 0 2px var(--tolopea-800);
+
+  --gradient-primary: linear-gradient(135deg, var(--neon-500), var(--fuchsia-400));
+  --gradient-deep:    linear-gradient(135deg, var(--tolopea-800), var(--fuchsia-500));
+  --gradient-surface: linear-gradient(180deg, var(--neutral-0), var(--neutral-100));
+
+  --focus-ring: 0 0 0 3px var(--tolopea-800);
+}

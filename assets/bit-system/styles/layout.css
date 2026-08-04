@@ -1,0 +1,12 @@
+/* ================================================================
+   BIT SYSTEM · Layout
+   ================================================================ */
+
+.bs-container   { max-width: var(--container-lg); margin: 0 auto; padding: 0 var(--space-8); }
+.bs-container-xl { max-width: var(--container-xl); margin: 0 auto; padding: 0 var(--space-8); }
+.bs-stack > * + * { margin-top: var(--space-4); }
+.bs-stack-lg > * + * { margin-top: var(--space-8); }
+.bs-row { display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; }
+.bs-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+.bs-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.bs-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6); }

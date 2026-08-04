@@ -1,0 +1,9 @@
+/* ================================================================
+   BIT SYSTEM · Public Components Entrypoint
+   Backward-compatible wrapper that keeps legacy import paths stable.
+   ================================================================ */
+
+@import url('./styles/layout.css');
+@import url('./styles/components-core.css');
+@import url('./styles/recipes.css');
+@import url('./styles/responsive.css');

@@ -1,0 +1,28 @@
+/* ================================================================
+   BIT SYSTEM · Legacy Aliases
+   Compatibility layer for v1 style references.
+   ================================================================ */
+
+:root {
+  --neon:          var(--neon-500);
+  --fuchsia:       var(--fuchsia-500);
+  --tolopea:       var(--tolopea-800);
+  --neutral-black: var(--neutral-950);
+  --t-fast:        var(--motion-fast);
+  --t-base:        var(--motion-base);
+
+  --gradient-secondary: var(--gradient-deep);
+  --gradient-tertiary:  linear-gradient(135deg, var(--neon-500), var(--tolopea-800));
+}
+
+:root,
+[data-theme="dark"],
+[data-theme="light"] {
+  --fg:        var(--color-text);
+  --fg-muted:  var(--color-text-muted);
+  --fg-subtle: var(--color-text-subtle);
+  --success:   var(--color-success);
+  --warning:   var(--color-warning);
+  --error:     var(--color-danger);
+  --error-300: var(--red-400);
+}

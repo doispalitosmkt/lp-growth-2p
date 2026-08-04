@@ -1,0 +1,64 @@
+/* ================================================================
+   BIT SYSTEM · Responsive
+   ================================================================ */
+
+@media (max-width: 768px) {
+  .bs-grid-2,
+  .bs-grid-3,
+  .bs-grid-4 { grid-template-columns: 1fr; }
+
+  .bs-container,
+  .bs-container-xl { padding: 0 var(--space-5); }
+
+  .btn-xl { font-size: var(--fs-body); padding: var(--space-4) var(--space-6); }
+
+  .recipe-mission { grid-template-columns: 1fr; }
+  .recipe-boss-stats__grid { grid-template-columns: 1fr 1fr; }
+  .recipe-player { flex-direction: column; align-items: flex-start; }
+
+  .navbar { padding: var(--space-3) var(--space-4); gap: var(--space-3); }
+  .navbar-top { padding: var(--space-1) var(--space-4); font-size: 10px; }
+
+  .alert { flex-direction: column; gap: var(--space-2); }
+
+  body { padding-left: var(--space-5) !important; padding-right: var(--space-5) !important; }
+
+  .page-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: var(--space-4) !important;
+    padding: var(--space-8) var(--space-5) !important;
+  }
+
+  h1[style*="96px"],
+  .display { font-size: clamp(48px, 12vw, 80px) !important; }
+
+  .grid-tokens { grid-template-columns: repeat(2, 1fr) !important; }
+  .motion-grid { grid-template-columns: 1fr !important; }
+  .z-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .icon-grid { grid-template-columns: repeat(3, 1fr) !important; }
+
+  .families { grid-template-columns: 1fr !important; }
+  .family-card.family-pixel .big,
+  .family-card.family-mono .big { font-size: clamp(80px, 25vw, 160px) !important; }
+
+  .logo-grid { grid-template-columns: 1fr !important; }
+  .symbol-row { grid-template-columns: 1fr 1fr !important; }
+
+  .report-grid { grid-template-columns: 1fr !important; }
+  .sidebar { display: none; }
+  .kpi-grid { grid-template-columns: 1fr 1fr !important; }
+
+  .page { width: 100% !important; min-height: auto !important; }
+  .grid-2,
+  .grid-3,
+  .grid-4 { grid-template-columns: 1fr !important; }
+
+  .bar-chart { height: 100px !important; }
+  .recipe-grid { grid-template-columns: 1fr !important; }
+
+  .hero-grid { grid-template-columns: 1fr !important; }
+  .testimonial-grid { grid-template-columns: 1fr !important; }
+  .foot-grid { grid-template-columns: 1fr !important; }
+  .demo-wrapper { padding: 0 var(--space-4) !important; }
+}

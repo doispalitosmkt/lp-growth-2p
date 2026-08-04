@@ -1,0 +1,8 @@
+/* ================================================================
+   BIT SYSTEM · Public Tokens Entrypoint
+   Backward-compatible wrapper that keeps legacy import paths stable.
+   ================================================================ */
+
+@import url('./styles/tokens-core.css');
+@import url('./styles/base.css');
+@import url('./styles/legacy-aliases.css');
