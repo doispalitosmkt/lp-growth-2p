@@ -6,10 +6,18 @@ window.LP_CONFIG = Object.freeze({
     form: Object.freeze({
       enabled: false,
       mountSelector: "#rd-form-mount"
-    }),
-    whatsapp: Object.freeze({
-      enabled: false,
-      launcherSelector: ""
+    })
+  }),
+  whatsapp: Object.freeze({
+    destinationPhone: "5511963563678",
+    fieldSelectors: Object.freeze({
+      name: "[name='nome']",
+      email: "[name='email']",
+      whatsapp: "[name='whatsapp']",
+      company: "[name='empresa']",
+      role: "[name='cargo']",
+      investment: "[name='investimento']",
+      challenge: "[name='desafio']"
     })
   })
 });

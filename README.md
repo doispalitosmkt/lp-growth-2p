@@ -29,16 +29,16 @@ Abrir o arquivo HTML diretamente não é recomendado porque alguns recursos do n
 
 Nesse modo:
 
-1. os três blocos de cases pendentes ficam visíveis;
+1. os três cases demonstrativos com dados fictícios ficam visíveis;
 2. o formulário valida os campos, mas não envia dados;
 3. `form_submit` não é disparado;
-4. o botão de WhatsApp informa que a integração ainda está pendente.
+4. o WhatsApp abre com uma mensagem preenchida, mas o envio continua dependendo da confirmação do usuário no aplicativo.
 
-Antes de publicar, substitua os cases por dados aprovados e altere `previewMode` para `false`. Conteúdo pendente não será mostrado com esse valor.
+Os cases demonstrativos incluem segmentos, períodos, narrativas e resultados inventados apenas para validar o formato visual. Antes de publicar, substitua todo esse conteúdo por dados aprovados e altere `previewMode` para `false`. Conteúdo demonstrativo não será mostrado com esse valor.
 
 ## Integração do formulário RD Station
 
-1. Crie no RD Station um formulário com os mesmos campos apresentados na prévia.
+1. Crie no RD Station um formulário com os mesmos campos apresentados na prévia, incluindo o campo obrigatório de WhatsApp.
 2. Cole o código oficial gerado dentro de `#rd-form-mount`, no final da seção de diagnóstico em `index.html`.
 3. Mantenha os scripts oficiais com carregamento assíncrono sempre que o snippet permitir.
 4. Altere `rdStation.form.enabled` para `true` em `assets/js/config.js`.
@@ -54,17 +54,23 @@ window.LPGrowth.rdFormSuccess();
 window.LPGrowth.rdFormError();
 ```
 
-O evento `form_submit` somente nasce em `rdFormSuccess`. Isso evita registrar conversão quando houve apenas clique ou tentativa de envio.
+No envio do formulário nativo, a página abre o WhatsApp com a mensagem pronta enquanto o RD Station processa o lead. O evento `form_submit` somente nasce em `rdFormSuccess`. Isso evita registrar conversão quando houve apenas clique ou tentativa de envio.
 
 Não adicione chave de API no navegador. Esta página foi preparada para usar o formulário nativo.
 
-## Integração do WhatsApp RD Station
+## WhatsApp gerado pelo formulário
 
-1. Cole o snippet oficial antes do fechamento de `body` em `index.html`.
-2. Defina `rdStation.whatsapp.enabled` como `true`.
-3. Preencha `rdStation.whatsapp.launcherSelector` com o seletor do botão criado pelo snippet.
+O número comercial fica centralizado em `whatsapp.destinationPhone`, dentro de `assets/js/config.js`. O valor atual é `5511963563678`.
 
-O botão secundário da LP acionará esse launcher e registrará `click_whatsapp_rdstation`. Não existe fallback direto para `wa.me`.
+Depois que os campos obrigatórios são validados, a página monta um link `wa.me` com nome, email, WhatsApp, empresa, cargo, investimento mensal em mídia e desafio. O link abre em uma nova aba, com a mensagem pronta. O usuário ainda precisa confirmar o envio no WhatsApp.
+
+Quando o formulário nativo do RD Station for adicionado, ajuste `whatsapp.fieldSelectors` em `assets/js/config.js` para os seletores reais gerados pelo RD. A abertura ocorre no evento de envio do formulário, sem impedir o processamento normal do RD Station. O callback `rdFormSuccess` continua sendo a confirmação oficial da conversão.
+
+Se o navegador bloquear a nova aba, a mensagem de status exibirá um link manual com o mesmo conteúdo preenchido.
+
+## Política de privacidade
+
+Os links do formulário, rodapé e aviso de mensuração abrem a política em um modal dentro da própria LP. O modal fecha pelo botão superior, pelo botão final, por clique fora do conteúdo ou pela tecla `Escape`. Ao fechar, o foco retorna ao link que iniciou a abertura.
 
 ## GTM e consentimento
 
@@ -84,16 +90,17 @@ Eventos disponíveis no `dataLayer`:
 1. `click_cta_diagnostico`
 2. `form_start`
 3. `form_submit`
-4. `click_whatsapp_rdstation`
+4. `open_whatsapp_diagnostico`
 
-Nenhum evento recebe nome, email, empresa ou outro dado digitado no formulário.
+Nenhum evento do `dataLayer` recebe nome, email, WhatsApp, empresa ou outro dado digitado no formulário. Esses dados aparecem somente no formulário do RD Station e na mensagem codificada no link do WhatsApp, conforme a ação solicitada pelo usuário.
 
 ## Checklist antes de publicar
 
-1. Aprovar ou remover todos os cases pendentes.
+1. Substituir todos os cases demonstrativos por nomes, períodos, métricas, fontes e depoimentos aprovados.
 2. Testar uma conversão real no RD Station e confirmar a entrada na automação.
 3. Confirmar que `form_submit` aparece uma única vez no modo de prévia do GTM.
-4. Testar o launcher do WhatsApp RD Station.
-5. Revisar telefone, email, CNPJ e política de privacidade.
-6. Alterar `previewMode` para `false`.
-7. Validar a página em celular, tablet e desktop.
+4. Confirmar o mapeamento dos campos do formulário RD em `whatsapp.fieldSelectors`.
+5. Testar a abertura do WhatsApp em celular e desktop, incluindo bloqueio de nova aba.
+6. Revisar telefone, email, CNPJ e política de privacidade.
+7. Alterar `previewMode` para `false`.
+8. Validar a página em celular, tablet e desktop.
