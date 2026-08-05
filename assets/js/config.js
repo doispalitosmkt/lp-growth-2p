@@ -2,6 +2,12 @@ window.LP_CONFIG = Object.freeze({
   previewMode: true,
   gtmContainerId: "GTM-KLSL6ZL",
   consentStorageKey: "lp_growth_consent_v1",
+  googleReviews: Object.freeze({
+    rating: "5,0",
+    count: 26,
+    sourceUrl: "https://maps.app.goo.gl/vwS8DPEbdBiieFR76",
+    updatedAt: "05 de agosto de 2026"
+  }),
   rdStation: Object.freeze({
     form: Object.freeze({
       enabled: false,

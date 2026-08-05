@@ -47,8 +47,8 @@
     <link rel="stylesheet" href="assets/bit-system/tokens.css" />
     <link rel="stylesheet" href="assets/bit-system/components.css" />
     <link rel="stylesheet" href="assets/css/landing.css" />
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/config.js?v=20260805"></script>
+    <script src="assets/js/main.js?v=20260805b" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -167,8 +167,16 @@
             </p>
           </div>
 
+          <div class="growth-cycle-shell">
+            <div class="cycle-orbit-track" aria-hidden="true"></div>
+
           <ol class="growth-cycle" aria-label="etapas do ciclo de growth">
-            <li class="recipe-mission cycle-step">
+            <li class="recipe-mission cycle-step cycle-step--analysis">
+              <span class="cycle-step__icon" aria-hidden="true">
+                <svg class="icon">
+                  <use href="assets/bit-system/assets/icons.svg#bs-search"></use>
+                </svg>
+              </span>
               <span class="recipe-mission__num" aria-hidden="true">01</span>
               <span class="cycle-kicker">leitura do jogo</span>
               <h3 class="recipe-mission__title">Análise</h3>
@@ -177,7 +185,12 @@
                 na página ou no follow-up de vendas.
               </p>
             </li>
-            <li class="recipe-mission cycle-step">
+            <li class="recipe-mission cycle-step cycle-step--planning">
+              <span class="cycle-step__icon" aria-hidden="true">
+                <svg class="icon">
+                  <use href="assets/bit-system/assets/icons.svg#bs-target"></use>
+                </svg>
+              </span>
               <span class="recipe-mission__num" aria-hidden="true">02</span>
               <span class="cycle-kicker">plano de ataque</span>
               <h3 class="recipe-mission__title">Planejamento</h3>
@@ -185,9 +198,14 @@
                 Priorizamos o que dá mais resultado: Mais leads entrando.
               </p>
             </li>
-            <li class="recipe-mission cycle-step">
-              <span class="recipe-mission__num" aria-hidden="true">03</span>
+            <li class="recipe-mission cycle-step cycle-step--execution">
+              <span class="cycle-step__icon" aria-hidden="true">
+                <svg class="icon">
+                  <use href="assets/bit-system/assets/icons.svg#bs-bolt"></use>
+                </svg>
+              </span>
               <span class="cycle-kicker">teste em campo</span>
+              <span class="recipe-mission__num" aria-hidden="true">03</span>
               <h3 class="recipe-mission__title">Execução</h3>
               <p class="recipe-mission__body">
                 Colocamos no ar, medimos o que virou cliente de verdade e
@@ -196,8 +214,20 @@
             </li>
           </ol>
 
+          <span class="cycle-orbit__connector cycle-orbit__connector--one" aria-hidden="true">
+            <svg class="icon"><use href="assets/bit-system/assets/icons.svg#bs-arrow-right"></use></svg>
+          </span>
+          <span class="cycle-orbit__connector cycle-orbit__connector--two" aria-hidden="true">
+            <svg class="icon"><use href="assets/bit-system/assets/icons.svg#bs-arrow-right"></use></svg>
+          </span>
+          <span class="cycle-orbit__connector cycle-orbit__connector--three" aria-hidden="true">
+            <svg class="icon"><use href="assets/bit-system/assets/icons.svg#bs-arrow-right"></use></svg>
+          </span>
+
           <div class="cycle-return">
-            <span class="cycle-return__icon" aria-hidden="true">↻</span>
+            <span class="cycle-return__icon" aria-hidden="true">
+              <svg class="icon"><use href="assets/bit-system/assets/icons.svg#bs-trending-up"></use></svg>
+            </span>
             <div>
               <strong>O resultado de uma rodada alimenta a próxima.</strong>
               <a
@@ -207,6 +237,7 @@
                 >Levar meu desafio para o diagnóstico →</a
               >
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -225,9 +256,15 @@
             </p>
           </div>
 
+          <div class="battle-arena">
           <div class="contrast-grid">
             <article class="contrast-card contrast-card--2p">
-              <span class="badge badge-brand">modo 2P</span>
+              <div class="contrast-card__header">
+                <span class="badge badge-brand">modo 2P</span>
+                <span class="contrast-card__icon" aria-hidden="true">
+                  <svg class="icon"><use href="assets/bit-system/assets/icons.svg#bs-trending-up"></use></svg>
+                </span>
+              </div>
               <h3>crescimento em Colaboração</h3>
               <ul class="contrast-list">
                 <li>
@@ -261,8 +298,15 @@
               </ul>
             </article>
 
+            <div class="battle-versus" aria-hidden="true"><span>VS</span></div>
+
             <article class="contrast-card contrast-card--standard">
-              <span class="badge">modo agência comum</span>
+              <div class="contrast-card__header">
+                <span class="badge">modo agência comum</span>
+                <span class="contrast-card__icon" aria-hidden="true">
+                  <svg class="icon"><use href="assets/bit-system/assets/icons.svg#bs-close"></use></svg>
+                </span>
+              </div>
               <h3>entrega sem direção</h3>
               <ul class="contrast-list">
                 <li>
@@ -298,7 +342,7 @@
           </div>
 
           <aside
-            class="qualification-callout"
+            class="qualification-callout battle-result"
             aria-label="perfil ideal para o diagnóstico"
           >
             <svg class="icon icon-lg" aria-hidden="true">
@@ -315,6 +359,7 @@
               >Quero avaliar o fit comercial →</a
             >
           </aside>
+          </div>
         </div>
       </section>
 
@@ -333,9 +378,24 @@
             </p>
           </div>
 
-          <div class="bs-grid-2 services-grid">
-            <article class="recipe-mission">
+          <div class="growth-engine">
+            <div class="growth-engine__core" aria-label="núcleo central de crescimento">
+              <span class="growth-engine__pulse" aria-hidden="true"></span>
+              <svg class="icon icon-lg" aria-hidden="true">
+                <use href="assets/bit-system/assets/icons.svg#bs-target"></use>
+              </svg>
+              <span class="growth-engine__eyebrow">núcleo 2P</span>
+              <strong>crescimento</strong>
+              <span>dados conectam cada frente</span>
+            </div>
+
+            <article class="recipe-mission growth-module growth-module--traffic">
+              <div class="growth-module__header">
+                <span class="growth-module__icon" aria-hidden="true">
+                  <svg class="icon"><use href="assets/bit-system/assets/icons.svg#bs-bolt"></use></svg>
+                </span>
               <span class="recipe-mission__num" aria-hidden="true">01</span>
+              </div>
               <h3 class="recipe-mission__title">Tráfego pago</h3>
               <p class="recipe-mission__body">
                 Anúncios que trazem o lead correto, filtrando o clique curioso, sempre prezando
@@ -349,8 +409,13 @@
                 >Falar sobre aquisição →</a
               >
             </article>
-            <article class="recipe-mission">
+            <article class="recipe-mission growth-module growth-module--leads">
+              <div class="growth-module__header">
+                <span class="growth-module__icon" aria-hidden="true">
+                  <svg class="icon"><use href="assets/bit-system/assets/icons.svg#bs-users"></use></svg>
+                </span>
               <span class="recipe-mission__num" aria-hidden="true">02</span>
+              </div>
               <h3 class="recipe-mission__title">Gestão de leads e vendas</h3>
               <p class="recipe-mission__body">
                 CRM, processo e treinamento para o seu time de vendas conseguir fechar
@@ -364,8 +429,13 @@
                 >Falar sobre o funil →</a
               >
             </article>
-            <article class="recipe-mission">
+            <article class="recipe-mission growth-module growth-module--pages">
+              <div class="growth-module__header">
+                <span class="growth-module__icon" aria-hidden="true">
+                  <svg class="icon"><use href="assets/bit-system/assets/icons.svg#bs-file"></use></svg>
+                </span>
               <span class="recipe-mission__num" aria-hidden="true">03</span>
+              </div>
               <h3 class="recipe-mission__title">Sites e landing pages</h3>
               <p class="recipe-mission__body">
                 Lindas páginas construídas do zero, usando sua ID, para converter o tráfego
@@ -379,8 +449,13 @@
                 >Falar sobre conversão →</a
               >
             </article>
-            <article class="recipe-mission">
+            <article class="recipe-mission growth-module growth-module--seo">
+              <div class="growth-module__header">
+                <span class="growth-module__icon" aria-hidden="true">
+                  <svg class="icon"><use href="assets/bit-system/assets/icons.svg#bs-search"></use></svg>
+                </span>
               <span class="recipe-mission__num" aria-hidden="true">04</span>
+              </div>
               <h3 class="recipe-mission__title">SEO e conteúdo</h3>
               <p class="recipe-mission__body">
                 Demanda recorrente que chega sem pagar por clique — baixando seu
@@ -414,8 +489,16 @@
             </p>
           </div>
 
+          <div class="plans-progress" aria-hidden="true">
+            <span class="plans-progress__line"></span>
+            <span class="plans-progress__node">01</span>
+            <span class="plans-progress__node">02</span>
+            <span class="plans-progress__node">03</span>
+            <span class="plans-progress__node">04</span>
+          </div>
+
           <div class="plans-grid">
-            <article class="plan-card" aria-labelledby="plan-meta-title">
+            <article class="plan-card" aria-labelledby="plan-meta-title" data-plan-stage="01">
               <div class="plan-card__slot">
                 <span>01</span>
                 <span>aquisição social</span>
@@ -445,7 +528,7 @@
               </div>
             </article>
 
-            <article class="plan-card" aria-labelledby="plan-google-title">
+            <article class="plan-card" aria-labelledby="plan-google-title" data-plan-stage="02">
               <div class="plan-card__slot">
                 <span>02</span>
                 <span>demanda ativa</span>
@@ -475,7 +558,7 @@
               </div>
             </article>
 
-            <article class="plan-card" aria-labelledby="plan-pro-title">
+            <article class="plan-card" aria-labelledby="plan-pro-title" data-plan-stage="03">
               <div class="plan-card__slot">
                 <span>03</span>
                 <span>escala multicanal</span>
@@ -505,7 +588,7 @@
               </div>
             </article>
 
-            <article class="plan-card" aria-labelledby="plan-2p-title">
+            <article class="plan-card" aria-labelledby="plan-2p-title" data-plan-stage="04">
               <div class="plan-card__slot">
                 <span>04</span>
                 <span>growth completo</span>
@@ -939,59 +1022,193 @@
               preencher espaço.
             </p>
           </div>
-          <div class="bs-grid-3 proof-grid">
-            <figure class="recipe-player">
-              <div class="recipe-player__stars">depoimento real</div>
-              <blockquote class="recipe-player__quote">
-                “O trabalho que eles fazem é muito forte em resultados”
-              </blockquote>
-              <figcaption class="recipe-player__who">
-                <span class="recipe-player__avatar" aria-hidden="true">HB</span>
-                <span>
-                  <span class="recipe-player__name">Humberto De Biase</span>
-                  <span class="recipe-player__role"
-                    >Mentor Endeavor e empresário</span
-                  >
-                </span>
-              </figcaption>
-            </figure>
-            <figure class="recipe-player">
-              <div class="recipe-player__stars">depoimento real</div>
-              <blockquote class="recipe-player__quote">
-                “Obtiveram uma captação de leads expressiva”
-              </blockquote>
-              <figcaption class="recipe-player__who">
-                <span class="recipe-player__avatar" aria-hidden="true">JR</span>
-                <span>
-                  <span class="recipe-player__name">Júnior</span>
-                  <span class="recipe-player__role">Fundador • JDR Solar</span>
-                </span>
-              </figcaption>
-            </figure>
-            <figure class="recipe-player">
-              <div class="recipe-player__stars">depoimento real</div>
-              <blockquote class="recipe-player__quote">
-                “Tem vindo gente mais próxima e com interesse real”
-              </blockquote>
-              <figcaption class="recipe-player__who">
-                <span class="recipe-player__avatar" aria-hidden="true">SS</span>
-                <span>
-                  <span class="recipe-player__name">Simone Seimetz</span>
-                  <span class="recipe-player__role"
-                    >Especialista em vendas</span
-                  >
-                </span>
-              </figcaption>
-            </figure>
+          <div class="google-proof-panel" data-google-reviews>
+            <div class="google-proof-summary">
+              <div class="google-proof-score" aria-label="nota 5,0 de 5 no Google">
+                <svg class="icon" aria-hidden="true"><use href="assets/bit-system/assets/icons.svg#bs-star"></use></svg>
+                <strong data-google-rating>5,0</strong>
+              </div>
+              <div>
+                <span class="google-proof-kicker">avaliações no Google</span>
+                <h3><span data-google-count>26</span> experiências públicas</h3>
+                <p>fotografia estática consultada em <span data-google-updated>05 de agosto de 2026</span></p>
+              </div>
+              <a class="btn btn-ghost google-proof-source" data-google-source href="https://maps.app.goo.gl/vwS8DPEbdBiieFR76" target="_blank" rel="noopener noreferrer">Ver perfil no Google</a>
+            </div>
+
+            <div class="google-review-toolbar">
+              <p class="google-review-status" data-review-status aria-live="polite">avaliação 1 de 26</p>
+              <div class="google-review-controls" aria-label="controles das avaliações">
+                <button class="google-review-control" type="button" data-review-prev aria-label="mostrar avaliações anteriores" disabled>
+                  <svg class="icon" aria-hidden="true"><use href="assets/bit-system/assets/icons.svg#bs-arrow-left"></use></svg>
+                </button>
+                <button class="google-review-control" type="button" data-review-next aria-label="mostrar próximas avaliações">
+                  <svg class="icon" aria-hidden="true"><use href="assets/bit-system/assets/icons.svg#bs-arrow-right"></use></svg>
+                </button>
+              </div>
+            </div>
+
+            <ul class="google-review-track" data-review-track aria-label="26 avaliações públicas da 2P no Google">
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">VG</span><div><h4>Valmir Guimarães</h4><time>um ano atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Trabalhar com a 2 Palitos foi uma experiência excepcional desde o início. A equipe demonstrou muita criatividade e domínio técnico em cada etapa do projeto.”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">MG</span><div><h4>Marieli Galleani</h4><time>um ano atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“A equipe da Dois Palitos MKT é simplesmente incrível!”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">MS</span><div><h4>Mica Silva</h4><time>um mês atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Nossa eu amei….. lugar lindo E o ambiente super agradável Muito detalhista que top amei! Super indico”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">BA</span><div><h4>Bruno Arita</h4><time>oito meses atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Muito satisfeito com a estratégia e planos elaborados pro meu negócio. Recebi uma indicação de um conhecido e fiquei muito surpreso positivamente. Indico os serviços e sobretudo o relacionamento com Aramis e Léo. O lado humano na elaboração e tratativas foi um diferencial!”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">JP</span><div><h4>Juliana Pating</h4><time>um ano atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Fiz 2 projetos em parceria com a 2P e posso dizer que foi uma ótima experiência.”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">FS</span><div><h4>Fernando Silva</h4><time>um ano atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Profissionalismo, comprometimento, experiência, conhecimento e um atendimento diferenciado com respeito e prontidão são algumas das qualidades que estão no DNA da 2 Palitos, fiquei muito satisfeito com os serviços prestados. Gratidão!!”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">GM</span><div><h4>Gilmar Moreira</h4><time>cinco meses atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Agência melhor eu desconheço! Profissionalismo impecável. Recomendo.”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">HV</span><div><h4>Hayeza Ohanna Gomes Viana</h4><time>um ano atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Excelência na entrega, competência profissional e parceria verdadeira! Sempre prontos para auxiliar no que for necessário, oferecendo suporte completo e feedback constante para garantir a melhoria contínua do trabalho.”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">E</span><div><h4>Elly</h4><time>um ano atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Trabalho maravilhoso! A equipe está sempre presente, trazendo novas estratégias e ajudando com tudo que precisamos. Super recomendo!”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">LG</span><div><h4>Ligia Razante Garcia</h4><time>um ano atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Estamos em parceria com a 2p há mais de um ano, estruturando e crescendo. Graças a Deus! Recomendo o serviço!”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">AS</span><div><h4>Ana Paula Santos</h4><time>editado há dois anos</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Com a estratégia de SEO deles a minha empresa de fotografia (@amar_elofotografia) só aumentou a quantidade de pessoas entrando em contato, são feras”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">CC</span><div><h4>Caio Cesar Couto</h4><time>um ano atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Atendimento com expertise e presteza, trazendo informações necessárias para o crescimento do negócio.”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">TR</span><div><h4>Thalita Rolim</h4><time>quatro anos atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“São FERAS em GESTÃO DE TRÁFEGO!!!!! Nota 10 em SEO !!!!”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">AR</span><div><h4>Ana Rodrigues</h4><time>quatro anos atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Simplesmente maravilhoso!!”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">MS</span><div><h4>Mario Soares</h4><time>uma semana atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Peguei para fazer uma campanha eleitoral. Que trabalho magnífico.”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">JW</span><div><h4>Jose Wendel</h4><time>três semanas atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <blockquote>“Compromisso total com o prazo de entrega. Uma das melhores agência de marketing de Sp”</blockquote>
+                </article>
+              </li>
+              <li class="google-review-card google-review-card--attributes">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">JF</span><div><h4>JOSE EDVANILDO ALVES FERREIRA</h4><time>quatro anos atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <p class="google-review-label">aspectos destacados</p><ul class="google-review-attributes"><li>Receptividade</li><li>Qualidade</li><li>Profissionalismo</li><li>Valor</li></ul>
+                </article>
+              </li>
+              <li class="google-review-card google-review-card--attributes">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">JR</span><div><h4>José Radson dos Santos Filho</h4><time>quatro anos atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <p class="google-review-label">aspecto destacado</p><ul class="google-review-attributes"><li>Qualidade</li></ul>
+                </article>
+              </li>
+              <li class="google-review-card google-review-card--attributes">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">PV</span><div><h4>Pedro Oliveira Vieira</h4><time>quatro anos atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <p class="google-review-label">aspectos destacados</p><ul class="google-review-attributes"><li>Receptividade</li><li>Qualidade</li><li>Profissionalismo</li><li>Valor</li></ul>
+                </article>
+              </li>
+              <li class="google-review-card google-review-card--attributes">
+                <article>
+                  <header><span class="google-review-avatar" aria-hidden="true">MK</span><div><h4>Maiara Karini</h4><time>quatro anos atrás</time></div></header>
+                  <svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg>
+                  <p class="google-review-label">aspectos destacados</p><ul class="google-review-attributes"><li>Receptividade</li><li>Qualidade</li><li>Profissionalismo</li><li>Valor</li></ul>
+                </article>
+              </li>
+              <li class="google-review-card google-review-card--rating-only">
+                <article><header><span class="google-review-avatar" aria-hidden="true">JT</span><div><h4>Jr Thomaz</h4><time>um mês atrás</time></div></header><svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg><p class="google-review-empty">avaliação sem comentário</p></article>
+              </li>
+              <li class="google-review-card google-review-card--rating-only">
+                <article><header><span class="google-review-avatar" aria-hidden="true">VB</span><div><h4>Victor Bermudes</h4><time>um ano atrás</time></div></header><svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg><p class="google-review-empty">avaliação sem comentário</p></article>
+              </li>
+              <li class="google-review-card google-review-card--rating-only">
+                <article><header><span class="google-review-avatar" aria-hidden="true">VM</span><div><h4>Vitor Martins</h4><time>dois anos atrás</time></div></header><svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg><p class="google-review-empty">avaliação sem comentário</p></article>
+              </li>
+              <li class="google-review-card google-review-card--rating-only">
+                <article><header><span class="google-review-avatar" aria-hidden="true">AM</span><div><h4>Alcyone Melchires</h4><time>quatro anos atrás</time></div></header><svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg><p class="google-review-empty">avaliação sem comentário</p></article>
+              </li>
+              <li class="google-review-card google-review-card--rating-only">
+                <article><header><span class="google-review-avatar" aria-hidden="true">JG</span><div><h4>Joyce Gomes</h4><time>quatro anos atrás</time></div></header><svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg><p class="google-review-empty">avaliação sem comentário</p></article>
+              </li>
+              <li class="google-review-card google-review-card--rating-only">
+                <article><header><span class="google-review-avatar" aria-hidden="true">AM</span><div><h4>Adriana Melchires</h4><time>quatro anos atrás</time></div></header><svg class="google-review-stars" role="img" aria-label="5 de 5 estrelas" viewBox="0 0 120 24"><use href="assets/bit-system/assets/icons.svg#bs-star" x="0" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="24" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="48" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="72" width="24" height="24"></use><use href="assets/bit-system/assets/icons.svg#bs-star" x="96" width="24" height="24"></use></svg><p class="google-review-empty">avaliação sem comentário</p></article>
+              </li>
+            </ul>
           </div>
-          <a
-            class="source-link"
-            href="https://doispalitosmkt.com.br/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Ver fonte dos depoimentos no site atual
-            <span aria-hidden="true">↗</span></a
-          >
         </div>
       </section>
 
@@ -1110,7 +1327,10 @@
                 data-preview-form
                 aria-describedby="form-status"
               >
-                <div class="form-grid">
+                <div class="form-checkpoints">
+                  <fieldset class="form-checkpoint">
+                    <legend><span>01</span><span>identificação</span></legend>
+                    <div class="form-grid">
                   <div class="form-field">
                     <label class="label" for="nome">Nome</label>
                     <input
@@ -1167,6 +1387,12 @@
                     >
                     <span class="field-error" id="whatsapp-error"></span>
                   </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="form-checkpoint">
+                    <legend><span>02</span><span>contexto da empresa</span></legend>
+                    <div class="form-grid">
 
                   <div class="form-field">
                     <label class="label" for="empresa">Empresa ou site</label>
@@ -1226,6 +1452,12 @@
                     </select>
                     <span class="field-error" id="investimento-error"></span>
                   </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="form-checkpoint">
+                    <legend><span>03</span><span>desafio comercial</span></legend>
+                    <div class="form-grid">
 
                   <div class="form-field form-field--full">
                     <label class="label" for="desafio"
@@ -1271,6 +1503,8 @@
                     </label>
                     <span class="field-error" id="consentimento-error"></span>
                   </div>
+                    </div>
+                  </fieldset>
                 </div>
 
                 <div class="form-actions">

@@ -19,8 +19,8 @@ Abrir o arquivo HTML diretamente não é recomendado porque alguns recursos do n
 
 1. `index.html`: estrutura, conteúdo, formulário e pontos de integração.
 2. `assets/css/landing.css`: layout e ajustes visuais da LP.
-3. `assets/js/config.js`: modo de prévia, GTM e estado das integrações RD Station.
-4. `assets/js/main.js`: validação, consentimento e tracking.
+3. `assets/js/config.js`: modo de prévia, avaliações do Google, GTM e estado das integrações RD Station.
+4. `assets/js/main.js`: validação, consentimento, tracking e controles das avaliações.
 5. `assets/bit-system`: runtime, fontes, logo e ícones locais do Bit System.
 
 ## Modo de prévia
@@ -71,6 +71,12 @@ Se o navegador bloquear a nova aba, a mensagem de status exibirá um link manual
 ## Política de privacidade
 
 Os links do formulário, rodapé e aviso de mensuração abrem a política em um modal dentro da própria LP. O modal fecha pelo botão superior, pelo botão final, por clique fora do conteúdo ou pela tecla `Escape`. Ao fechar, o foco retorna ao link que iniciou a abertura.
+
+## Avaliações do Google
+
+A prova social inclui uma fotografia estática das 26 avaliações públicas consultadas em 5 de agosto de 2026. Os textos, atributos, autores e datas estão no HTML para permanecerem acessíveis mesmo sem JavaScript.
+
+Nota, quantidade, fonte e data de atualização ficam em `googleReviews`, dentro de `assets/js/config.js`. A atualização é manual. A página não usa API, chave ou carregamento remoto do Google.
 
 ## GTM e consentimento
 

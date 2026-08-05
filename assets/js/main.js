@@ -6,6 +6,7 @@
   const rdConfig = config.rdStation || {};
   const rdFormConfig = rdConfig.form || {};
   const whatsappConfig = config.whatsapp || {};
+  const googleReviewsConfig = config.googleReviews || {};
   const pageType = "lp_growth";
 
   window.dataLayer = window.dataLayer || [];
@@ -602,17 +603,118 @@
     });
   }
 
+  function setupGoogleReviews() {
+    const panel = document.querySelector("[data-google-reviews]");
+
+    if (!panel) {
+      return;
+    }
+
+    const track = panel.querySelector("[data-review-track]");
+    const cards = track ? Array.from(track.querySelectorAll(".google-review-card")) : [];
+    const previousButton = panel.querySelector("[data-review-prev]");
+    const nextButton = panel.querySelector("[data-review-next]");
+    const status = panel.querySelector("[data-review-status]");
+    const source = panel.querySelector("[data-google-source]");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let updateFrame = 0;
+
+    const rating = document.querySelector("[data-google-rating]");
+    const count = document.querySelector("[data-google-count]");
+    const updated = document.querySelector("[data-google-updated]");
+
+    if (rating && googleReviewsConfig.rating) {
+      rating.textContent = googleReviewsConfig.rating;
+    }
+
+    if (count && Number.isFinite(googleReviewsConfig.count)) {
+      count.textContent = String(googleReviewsConfig.count);
+    }
+
+    if (updated && googleReviewsConfig.updatedAt) {
+      updated.textContent = googleReviewsConfig.updatedAt;
+    }
+
+    if (source && googleReviewsConfig.sourceUrl) {
+      source.href = googleReviewsConfig.sourceUrl;
+    }
+
+    if (!track || !cards.length || !previousButton || !nextButton || !status) {
+      return;
+    }
+
+    function getMetrics() {
+      const firstCard = cards[0];
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+      const step = firstCard.getBoundingClientRect().width + gap;
+      const visible = Math.max(1, Math.round((track.clientWidth + gap) / step));
+
+      return { step: step, visible: visible };
+    }
+
+    function renderReviewControls() {
+      const metrics = getMetrics();
+      const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+      const firstVisible = Math.min(cards.length - 1, Math.max(0, Math.round(track.scrollLeft / metrics.step)));
+      const lastVisible = Math.min(cards.length, firstVisible + metrics.visible);
+
+      previousButton.disabled = track.scrollLeft <= 2;
+      nextButton.disabled = track.scrollLeft >= maxScroll - 2;
+      status.textContent = metrics.visible > 1
+        ? "avaliações " + (firstVisible + 1) + " a " + lastVisible + " de " + cards.length
+        : "avaliação " + (firstVisible + 1) + " de " + cards.length;
+    }
+
+    function updateReviewControls() {
+      window.cancelAnimationFrame(updateFrame);
+      updateFrame = window.requestAnimationFrame(renderReviewControls);
+    }
+
+    function moveReviews(direction) {
+      const metrics = getMetrics();
+      const destination = track.scrollLeft + direction * metrics.step * metrics.visible;
+
+      track.scrollTo({
+        left: destination,
+        behavior: reducedMotion.matches ? "auto" : "smooth"
+      });
+    }
+
+    previousButton.addEventListener("click", function () {
+      moveReviews(-1);
+    });
+
+    nextButton.addEventListener("click", function () {
+      moveReviews(1);
+    });
+
+    track.addEventListener("scroll", updateReviewControls, { passive: true });
+    window.addEventListener("resize", updateReviewControls, { passive: true });
+    renderReviewControls();
+    window.addEventListener("load", renderReviewControls, { once: true });
+  }
+
   window.LPGrowth = Object.freeze({
     rdFormSuccess: rdFormSuccess,
     rdFormError: rdFormError,
     buildWhatsappUrl: buildWhatsappUrl
   });
 
-  setupPreviewVisibility();
-  setupConsentBanner();
-  setupPrimaryCtaObserver();
-  setupDiagnosticCtaTracking();
-  setupPreviewForm();
-  setupNativeRdForm();
-  setupPrivacyModal();
+  function runSetup(name, setup) {
+    try {
+      setup();
+    } catch (error) {
+      console.error("[LP setup] " + name, error);
+    }
+  }
+
+  runSetup("google reviews", setupGoogleReviews);
+  runSetup("preview visibility", setupPreviewVisibility);
+  runSetup("consent banner", setupConsentBanner);
+  runSetup("primary CTA observer", setupPrimaryCtaObserver);
+  runSetup("CTA tracking", setupDiagnosticCtaTracking);
+  runSetup("preview form", setupPreviewForm);
+  runSetup("native RD form", setupNativeRdForm);
+  runSetup("privacy modal", setupPrivacyModal);
 })();
