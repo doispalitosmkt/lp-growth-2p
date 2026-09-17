@@ -3240,3 +3240,338 @@ select.input {
     transition: none;
   }
 }
+
+/* ================================================================
+   Revisão de acessibilidade, legibilidade e imagens (2026-09)
+   ================================================================ */
+
+/* Tokens ausentes ou abaixo do mínimo WCAG */
+:root {
+  --space-7: 28px;
+  --fs-caption: 13px;
+  --color-text-subtle: var(--neutral-400); /* 5,4:1 sobre --color-surface */
+}
+
+/* Tamanhos mínimos de leitura */
+.microproof,
+.checkbox-row,
+.plan-card__features li,
+.google-review-card blockquote,
+.google-review-card h4 {
+  font-size: 15px;
+}
+
+.field-help,
+.field-error,
+.recipe-mission__link,
+.google-review-card time,
+.google-review-label,
+.google-review-empty,
+.google-review-status,
+.google-proof-summary p,
+.case-study__narrative h4 {
+  font-size: var(--fs-body-sm);
+}
+
+.form-reassurance {
+  font-size: var(--fs-body-sm) !important;
+}
+
+.nav-cta {
+  font-size: var(--fs-caption);
+}
+
+.footer-bottom,
+.cycle-kicker {
+  font-size: var(--fs-caption);
+}
+
+/* Títulos em fonte pixel não devem herdar o line-height do corpo */
+.recipe-mission__title {
+  line-height: 1.02;
+}
+
+/* Links em contexto de texto precisam de sinal além da cor (WCAG 1.4.1) */
+.footer-col a,
+.consent-banner a,
+.privacy-modal__content a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.footer-col a {
+  padding-block: var(--space-1);
+}
+
+/* Card da agência comum: continua secundário, mas legível */
+.contrast-card--standard {
+  opacity: 0.9;
+  filter: saturate(0.5);
+}
+
+/* Trilho de avaliações acessível por teclado */
+.google-review-track:focus-visible {
+  outline: 3px solid var(--brand-primary);
+  outline-offset: 4px;
+  box-shadow: none;
+}
+
+/* Decorações em pseudo-elementos silenciosas para leitores de tela */
+.recipe-save-point::before,
+.recipe-save-point::after {
+  content: "\2605 \2605 \2605 \2605 \2605 \2605 \2605 \2605 \2605 \2605 \2605" / "";
+}
+
+.recipe-console::before {
+  content: "\25CF \25CF \25CF" / "";
+}
+
+/* Título do save point em menos linhas */
+.conversion-shell.recipe-save-point .conversion-intro h2 {
+  max-width: none;
+  font-size: clamp(2.6rem, 3.8vw, 3.4rem);
+}
+
+/* ---------- Ilustrações SVG inline ---------- */
+.fig-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: var(--color-text-muted);
+}
+
+.fig-label--xs { font-size: 9px; letter-spacing: 0.02em; }
+.fig-label--brand { fill: var(--neon-500); }
+.fig-label--accent { fill: var(--fuchsia-500); }
+.fig-label--deep { fill: var(--tolopea-200); }
+.fig-label--ink { fill: var(--neutral-950); }
+.fig-label--text { fill: var(--color-text); }
+
+.fig-pixel {
+  font-family: var(--font-pixel);
+  font-size: 40px;
+  fill: var(--color-text);
+}
+
+.fig-pixel--sm { font-size: 26px; }
+
+
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  justify-self: center;
+}
+
+.hero-visual .hero-console {
+  width: min(100%, 460px);
+  margin: calc(var(--space-6) * -1) 0 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-6);
+}
+
+/* Posicionamento: figura dentro dos cards */
+.contrast-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.contrast-card__figure {
+  margin: var(--space-8) 0 0;
+  padding-top: var(--space-6);
+  border-top: var(--border-1) dashed color-mix(in srgb, currentColor 40%, transparent);
+}
+
+
+.contrast-card--2p .contrast-card__figure {
+  margin-top: auto;
+  padding-top: var(--space-8);
+}
+
+
+/* Cases: espaço reservado para o logo do cliente */
+.case-study__logo {
+  width: 168px;
+  height: 56px;
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+/* Prova social: título + ilustração coop */
+.proof-heading {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.proof-heading .section-heading {
+  margin-bottom: 0;
+}
+
+
+/* FAQ: lista + bloco de interrogação */
+.faq-layout {
+  display: grid;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.faq-figure {
+  width: min(100%, 260px);
+  height: auto;
+  margin-inline: auto;
+  display: block;
+}
+
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+  }
+
+  .hero-visual {
+    justify-self: end;
+  }
+
+  .proof-heading {
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  }
+
+  .faq-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+
+  .faq-figure {
+    position: sticky;
+    top: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-visual .hero-console {
+    width: 100%;
+    margin-top: var(--space-4);
+  }
+}
+
+/* ---------- Fotografias (Unsplash) com tratamento da marca ---------- */
+.photo-frame {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: var(--border-2) solid var(--brand-primary);
+  background: var(--color-surface);
+  box-shadow: 8px 8px 0 color-mix(in srgb, var(--brand-primary) 22%, transparent);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(0.82) contrast(1.06);
+}
+
+.photo-frame::before,
+.photo-frame::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+/* tint roxo/neon para harmonizar com a paleta */
+.photo-frame::after {
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--brand-primary) 22%, transparent),
+    color-mix(in srgb, var(--brand-deep) 42%, transparent) 55%,
+    color-mix(in srgb, var(--brand-accent) 20%, transparent)
+  );
+  mix-blend-mode: multiply;
+}
+
+/* scanlines sutis, no espírito do Bit System */
+.photo-frame::before {
+  z-index: 1;
+  opacity: 0.14;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    var(--neutral-950) 4px
+  );
+}
+
+.hero-photo {
+  aspect-ratio: 4 / 3;
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--brand-primary) 22%, transparent);
+}
+
+.contrast-card__figure .photo-frame {
+  aspect-ratio: 3 / 2;
+}
+
+.contrast-card--standard .photo-frame {
+  border-color: var(--color-border-strong);
+  box-shadow: none;
+}
+
+.contrast-card--standard .photo-frame img {
+  filter: grayscale(1) contrast(1.05) brightness(0.8);
+}
+
+.contrast-card--standard .photo-frame::after {
+  background: color-mix(in srgb, var(--neutral-950) 35%, transparent);
+}
+
+.growth-module__photo {
+  margin-bottom: var(--space-5);
+  aspect-ratio: 16 / 9;
+  border-color: var(--color-border-strong);
+  box-shadow: none;
+  transition: border-color var(--motion-base) var(--ease-smooth);
+}
+
+.growth-module:hover .growth-module__photo,
+.growth-module:focus-within .growth-module__photo {
+  border-color: var(--brand-primary);
+}
+
+.case-study__aside {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.case-study__photo {
+  aspect-ratio: 16 / 10;
+  border-color: var(--case-accent);
+  box-shadow: 8px 8px 0 color-mix(in srgb, var(--case-accent) 40%, var(--color-bg));
+}
+
+.proof-photo {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 3;
+  justify-self: center;
+}
+
+.conversion-photo {
+  width: min(100%, 420px);
+  margin-top: var(--space-8);
+  aspect-ratio: 4 / 3;
+}
+
+@media (min-width: 900px) {
+  .proof-photo {
+    justify-self: end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .growth-module__photo {
+    transition: none;
+  }
+}

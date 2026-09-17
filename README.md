@@ -23,6 +23,14 @@ Abrir o arquivo HTML diretamente não é recomendado porque alguns recursos do n
 4. `assets/js/main.js`: validação, consentimento, tracking e controles das avaliações.
 5. `assets/bit-system`: runtime, fontes, logo e ícones locais do Bit System.
 
+## Imagens
+
+As 12 fotografias da LP vêm do Unsplash (licença Unsplash: uso comercial livre, sem atribuição obrigatória) e são servidas por hotlink do CDN `images.unsplash.com`, com `srcset` responsivo e `loading="lazy"` abaixo da dobra. Os IDs de cada foto estão listados em um comentário no `<head>` de `index.html`.
+
+O tratamento visual (moldura, tint roxo/neon e scanlines) é feito em CSS pela classe `.photo-frame`, então qualquer foto pode ser trocada apenas substituindo o `src`/`srcset`.
+
+Antes de publicar, recomenda-se baixar as fotos para `assets/img/` e apontar os `src` para os arquivos locais, eliminando a dependência de um CDN de terceiros e a requisição externa feita pelo navegador do visitante.
+
 ## Modo de prévia
 
 `previewMode` começa como `true` em `assets/js/config.js`.
